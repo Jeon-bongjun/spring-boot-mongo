@@ -46,9 +46,14 @@ public class HomeController {
 		System.out.println("##[ST]##[SETMONGO ]#############################");
 		
 		//req.getParameter("id"),
-	    mongoTemplete.insert(new User( req.getParameter("name")
-	    		, req.getParameter("email")));
+		
+		User setUser = new User( req.getParameter("name")
+	    		, req.getParameter("email"));
+		
+	    mongoTemplete.insert(setUser);
 	    
+	    //insert data return id
+	    System.out.println("##[setUser getID] :: "+setUser.getId());
 		
 		System.out.println("##[ED]##[SETMONGO ]#############################");
 		
